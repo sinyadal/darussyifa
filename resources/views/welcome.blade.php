@@ -6,7 +6,7 @@
         @guest
         <div class="uk-alert-danger" uk-alert>
             <h3>Perhatian!</h3>
-            <p>Kalau nak makan, sila log masuk dahulu.
+            <p>Sila log masuk dahulu.
             </p>
         </div>
         @else @endguest
