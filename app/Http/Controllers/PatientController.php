@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Patients;
 
 class PatientController extends Controller
 {
@@ -13,7 +14,8 @@ class PatientController extends Controller
      */
     public function index()
     {
-        //
+        $patients = Patients::all();
+        return view('patients.index', compact('patients'));
     }
 
     /**
@@ -23,7 +25,8 @@ class PatientController extends Controller
      */
     public function create()
     {
-        //
+        $patients = Patients::all();
+        return view('patients.create', compact('patients'));
     }
 
     /**
@@ -34,7 +37,34 @@ class PatientController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Validation
+        $this->validate($request, [
+            'name' => 'required|max:50',
+            'ic_number' => 'required|max:20',
+            'gender' => 'required',
+            'phone_number' => 'required|max:15',
+            'email' => 'required|max:20',
+            'address' => 'required|max:100',
+            'postcode' => 'required|max:10',
+            'state' => 'required|max:20',
+        ]);
+
+        // Save to database
+        $patient = new Patients;
+
+        $patient->name = $request->name;
+        $patient->ic_number = $request->ic_number;
+        $patient->gender = $request->gender;
+        $patient->phone_number = $request->phone_number;
+        $patient->email = $request->email;
+        $patient->address = $request->address;
+        $patient->postcode = $request->postcode;
+        $patient->state = $request->state;
+
+        $patient->save();
+
+        // Return view
+        return redirect()->route('patient.create');
     }
 
     /**

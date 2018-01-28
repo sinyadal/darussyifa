@@ -21,7 +21,7 @@
                 <div class="uk-margin">
                     <label class="uk-form-label">Email Address</label>
                     <div class="uk-form-controls">
-                        <input class="uk-input" type="email" name="email" value="{{ old('email') }}" placeholder="" autofocus> @if ($errors->has('email'))
+                        <input class="uk-input" type="email" name="email" value="{{ old('email') }}" placeholder=""> @if ($errors->has('email'))
                         <div class="uk-margin uk-text-danger">
                             <p>{{ $errors->first('email') }}</p>
                         </div>
