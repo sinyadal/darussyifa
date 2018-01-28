@@ -3,12 +3,14 @@
 <div class="uk-section uk-section-default">
     <div class="uk-container">
 
+        @guest
         <div class="uk-alert-danger" uk-alert>
-            <button class="uk-alert-close uk-close-large" type="button" uk-close></button>
             <h3>Perhatian!</h3>
             <p>Kalau nak makan, sila log masuk dahulu.
             </p>
         </div>
+        @else @endguest
+
         <div class="uk-card uk-card-body uk-card-primary">
             <h1 class="uk-card-title">Selamat Datang ke Sistem Pendaftaran Darussyifa'</h1>
             <p>Darussyifa’ merupakan sebuah tempat rawatan yang terkenal di kalangan penduduk Bangi dan masyarakat luar terutamanya

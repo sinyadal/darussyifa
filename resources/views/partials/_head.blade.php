@@ -8,5 +8,7 @@
 
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
+    <link href="{{ asset('css/proxima-nova/proxima-nova.css') }}" rel="stylesheet">
+
     <script src="{{ asset('js/app.js') }}"></script>
 </head>
