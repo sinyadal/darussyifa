@@ -62,7 +62,7 @@
     <div class="uk-section uk-section-default">
         <div class="uk-container">
 
-            <div class="uk-card uk-card-body uk-card-primary">
+            <div class="uk-card uk-card-body uk-card-default">
                 <h1 class="uk-card-title">Login</h1>
 
                 <form class="uk-form-horizontal" method="POST" action="{{ route('login') }}">
@@ -71,7 +71,7 @@
                     <div class="uk-margin">
                         <label class="uk-form-label" for="form-h-text">Email Address</label>
                         <div class="uk-form-controls">
-                            <input class="uk-input {{ $errors->has('email') ? 'uk-form-danger' : '' }}" id="form-h-text" type="email" name="email" value="{{ old('email') }}"
+                            <input class="uk-input" id="form-h-text" type="email" name="email" value="{{ old('email') }}"
                                 placeholder="" autofocus> @if ($errors->has('email'))
                             <div class="uk-margin uk-text-danger">
                                 <p>{{ $errors->first('email') }}</p>
@@ -84,7 +84,7 @@
                     <div class="uk-margin">
                         <label class="uk-form-label" for="form-h-text">Password</label>
                         <div class="uk-form-controls">
-                            <input class="uk-input {{ $errors->has('password') ? 'uk-form-danger' : '' }}" id="form-h-text" type="password" name="password"
+                            <input class="uk-input" id="form-h-text" type="password" name="password"
                                 placeholder=""> @if ($errors->has('password'))
                             <div class="uk-margin uk-text-danger">
                                 <p>{{ $errors->first('password') }}</p>
@@ -127,36 +127,3 @@
 
 
 
-
-
-
-
-{{--
-<form class="uk-form-horizontal">
-    <div class="uk-margin">
-        <label class="uk-form-label" for="form-h-text">Email Address</label>
-        <div class="uk-form-controls">
-            <input class="uk-input" id="form-h-text" type="text" placeholder="">
-        </div>
-    </div>
-
-    <div class="uk-margin">
-        <label class="uk-form-label" for="form-h-text">Password</label>
-        <div class="uk-form-controls">
-            <input class="uk-input" id="form-h-text" type="password" placeholder="">
-        </div>
-    </div>
-
-    <div class="uk-margin">
-        <span class="uk-form-label">Checkbox</span>
-        <div class="uk-form-controls uk-form-controls-text">
-            <label>
-                <input class="uk-checkbox" type="checkbox"> Remember Me</label>
-        </div>
-    </div>
-
-    <div class="uk-margin" uk-margin>
-        <button class="uk-button uk-button-primary">Login</button>
-        <button class="uk-button uk-button-default">Forgot Password?</button>
-    </div>
-</form> --}}
