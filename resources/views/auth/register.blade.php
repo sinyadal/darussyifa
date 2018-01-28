@@ -43,7 +43,11 @@
                 <div class="uk-margin">
                     <label class="uk-form-label" for="form-h-text">Confirm Password</label>
                     <div class="uk-form-controls">
-                        <input class="uk-input" id="form-h-text" type="password" name="password_confirmation" placeholder="">
+                        <input class="uk-input" id="form-h-text" type="password" name="password_confirmation" placeholder=""> @if ($errors->has('password_confirmation'))
+                        <div class="uk-margin uk-text-danger">
+                            <p>{{ $errors->first('password_confirmation') }}</p>
+                        </div>
+                        @endif
                     </div>
                 </div>
 
