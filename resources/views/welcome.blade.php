@@ -2,10 +2,26 @@
 
 <div class="uk-section uk-section-default">
     <div class="uk-container">
-        <div class="uk-card uk-card-body uk-card-default">
-            <h1 class="uk-card-title">HI!</h1>
+
+        <div class="uk-alert-danger" uk-alert>
+            <button class="uk-alert-close uk-close-large" type="button" uk-close></button>
+            <h3>Perhatian!</h3>
+            <p>Kalau nak makan, sila log masuk dahulu.
+            </p>
+        </div>
+        <div class="uk-card uk-card-body uk-card-primary">
+            <h1 class="uk-card-title">Selamat Datang ke Sistem Pendaftaran Darussyifa'</h1>
+            <p>Darussyifa’ merupakan sebuah tempat rawatan yang terkenal di kalangan penduduk Bangi dan masyarakat luar terutamanya
+                orang Islam. Ia menjadi satu altematif kepada orang ramai dalam usaha mencari kesembuhan penyakit selepas
+                mendapatkan rawatan dari klinik dan hospital. Kebanyakan pesakit yang datang bukan hanya mengalami penyakit
+                fizikal tetapi juga melibatkan penyakit rohani seperti terkena ganguan makhluk halus dan seumpamanya. Dengan
+                kaedah yang diamalkan oleh Darussyifa’ iaitu menggunakan ayat-ayat al-Qur’an, Hadith dan Doa-doa menambahkan
+                lagi keyakinan orang ramai terhadapnya.
+            </p>
         </div>
     </div>
 </div>
+
+
 
 @endsection
