@@ -2,7 +2,7 @@
     <div class="uk-container uk-container">
         <div uk-navbar>
             <div class="uk-navbar-left">
-                <a class="uk-navbar-item uk-logo" href="#">Darussyifa</a>
+                <a class="uk-navbar-item uk-logo" href="/">Darussyifa</a>
             </div>
             <div class="uk-navbar-right">
                 @guest
@@ -29,12 +29,6 @@
                         </div>
                     </li>
                 </ul>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
-                        {{ Auth::user()->name }}
-                        <span class="caret"></span>
-                    </a>
-                </li>
                 @endguest
             </div>
         </div>
