@@ -10,7 +10,12 @@
                 <div class="uk-margin">
                     <label class="uk-form-label">Name</label>
                     <div class="uk-form-controls">
-                        <input class="uk-input" type="text" name="name" value="{{ old('name') }}" placeholder="" autofocus>
+                        <input class="uk-input" type="text" name="name" value="{{ old('name') }}" placeholder="Error aku buat kat satu input ni je, yang lain buat sendiri.. Try tekan add tanpa masuk apa apa info" autofocus>
+                        @if ($errors->has('name'))
+                        <div class="uk-margin uk-text-danger">
+                            <p>{{ $errors->first('name') }}</p>
+                        </div>
+                        @endif
                     </div>
                 </div>
 

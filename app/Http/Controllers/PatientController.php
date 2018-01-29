@@ -68,7 +68,7 @@ class PatientController extends Controller
         $patient->save();
 
         // Return view
-        return redirect()->route('patient.create');
+        return redirect()->route('patient.index');
     }
 
     /**
@@ -119,7 +119,7 @@ class PatientController extends Controller
 
         $patients->delete();
         
-        return redirect()->route('patientgi.index');
+        return redirect()->route('patient.index');
     }
 
     public function search(Request $request) {
