@@ -87,6 +87,8 @@ class PatientController extends Controller
     public function edit($id)
     {
         //
+        $patients = Patients::find($id);
+        return view('patients.edit', compact('patients'));
     }
 
     /**

@@ -25,24 +25,30 @@
                         <th>Address</th>
                         <th>Postcode</th>
                         <th>State</th>
-                        <th>Option</th>
+                        <th>Update</th>
+                        <th>Delete</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($patients as $patients)
+                    @foreach($patients as $patient)
                     <tr>
-                        <td>{{ $patients->name }}</td>
-                        <td>{{ $patients->ic_number }}</td>
-                        @if ($patients->gender == 1)
+                        <td>{{ $patient->name }}</td>
+                        <td>{{ $patient->ic_number }}</td>
+                        @if ($patient->gender == 1)
                         <td>Male</td>
-                        @else ($patients->gender == 2)
+                        @else ($patient->gender == 2)
                         <td>Female</td>
                         @endif
-                        <td>{{ $patients->phone_number }}</td>
-                        <td>{{ $patients->email }}</td>
-                        <td>{{ $patients->address }}</td>
-                        <td>{{ $patients->postcode }}</td>
-                        <td>{{ $patients->state }}</td>
+                        <td>{{ $patient->phone_number }}</td>
+                        <td>{{ $patient->email }}</td>
+                        <td>{{ $patient->address }}</td>
+                        <td>{{ $patient->postcode }}</td>
+                        <td>{{ $patient->state }}</td>
+                        <td><a href="{{ route('patient.edit', $patient->id) }}" class="uk-button uk-button-primary">Edit</a>
+                        </td>
+                        <td>
+                             <a href="{{ route('patient.destroy', $patient->id) }}" class="uk-button uk-button-danger">Delete</a>
+                        </td>
                     </tr>
                     @endforeach
 
