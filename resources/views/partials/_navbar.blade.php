@@ -13,7 +13,7 @@
 
                 @else
                 <div class="uk-navbar-item">
-                    <button class="uk-button uk-button-default" type="button">Hi! {{ Auth::user()->name }}</button>
+                    <button class="uk-button uk-button-default" type="button">Hi! {{ Auth::user()->name }} <span uk-icon="icon: chevron-down"></span></button>
                     <div uk-dropdown>
                         <ul class="uk-nav uk-dropdown-nav">
                             <li>
