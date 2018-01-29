@@ -3,11 +3,12 @@
 <div class="uk-section uk-section-default">
     <div class="uk-container-expand">
         <div class="uk-card uk-card-body uk-card-default uk-margin-left uk-margin-right">
-            
 
-            <form class="uk-search uk-search-default uk-form-width-large">
+
+            <form action="search" method="POST" class="uk-search uk-search-default uk-form-width-large">
+                {{ csrf_field() }}
                 <span uk-search-icon></span>
-                <input class="uk-search-input uk-form-width-large" type="search" placeholder="Search...">
+                <input class="uk-search-input uk-form-width-large" type="search" name="search" placeholder="Search...">
             </form>
 
             <a href="{{ route('patient.create') }}" class="uk-align-right uk-button uk-button-primary">Add Patient</a>

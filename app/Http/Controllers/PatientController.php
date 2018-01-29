@@ -111,4 +111,13 @@ class PatientController extends Controller
     {
         //
     }
+
+    public function search(Request $request) {
+
+        $input = $request->search;
+
+        $patients = Patients::where('name', 'LIKE', '%'.$input.'%')->get();
+
+        return view('patients.index', compact('patients'));
+	}
 }

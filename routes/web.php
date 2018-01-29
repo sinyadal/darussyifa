@@ -20,3 +20,4 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('/patient', 'PatientController');
+Route::post('/search', 'PatientController@search');
