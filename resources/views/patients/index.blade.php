@@ -1,6 +1,6 @@
 @extends('layouts.app') @section('content')
 
-<div class="uk-section uk-section-default">
+<div class="uk-section uk-section-default" uk-height-viewport="expand: true">
     <div class="uk-container-expand">
         <div class="uk-card uk-card-body uk-card-default uk-margin-left uk-margin-right">
             <h1 class="uk-card-title">Patient</h1>
