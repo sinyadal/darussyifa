@@ -126,7 +126,7 @@ class PatientController extends Controller
 
         $input = $request->search;
 
-        $patients = Patients::where('name', 'LIKE', '%'.$input.'%')->get();
+        $patients = Patients::where('name', 'LIKE', '%'.$input.'%')->orWhere('ic_number', 'LIKE', '%'.$input.'%')->get();
 
         return view('patients.index', compact('patients'));
 	}

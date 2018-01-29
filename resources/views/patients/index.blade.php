@@ -7,7 +7,7 @@
             <form action="search" method="POST" class="uk-search uk-search-default uk-form-width-large">
                 {{ csrf_field() }}
                 <span uk-search-icon></span>
-                <input class="uk-search-input uk-form-width-large" type="search" name="search" placeholder="Search...">
+                <input class="uk-search-input uk-form-width-large" type="search" name="search" placeholder="Search by name, or IC number..">
             </form>
 
             <a href="{{ route('patient.create') }}" class="uk-align-right uk-button uk-button-primary">Add Patient</a>
