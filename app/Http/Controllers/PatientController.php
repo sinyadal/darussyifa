@@ -105,6 +105,36 @@ class PatientController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $patient = Patients::find($id);
+
+        $this->validate($request, [
+            'name' => 'required|max:50',
+            'ic_number' => 'required|max:20',
+            'gender' => 'required',
+            'phone_number' => 'required|max:15',
+            'email' => 'required|max:20',
+            'address' => 'required|max:100',
+            'postcode' => 'required|max:10',
+            'state' => 'required|max:20',
+        ]);
+
+        $patient = Patients::find($id);
+        $patient->name = $request->name;
+        $patient->ic_number = $request->ic_number;
+        $patient->gender = $request->gender;
+        $patient->phone_number = $request->phone_number;
+        $patient->email = $request->email;
+        $patient->address = $request->address;
+        $patient->postcode = $request->postcode;
+        $patient->state = $request->state;
+
+        $patient->save();
+
+        $patients = Patients::all();
+        return view('patients.index', compact('patients'));
+
+
+
     }
 
     /**
