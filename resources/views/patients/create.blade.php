@@ -1,8 +1,8 @@
 @extends('layouts.app') @section('content')
 
 <div class="uk-section uk-section-default">
-    <div class="uk-container">
-        <div class="uk-card uk-card-body uk-card-default">
+    <div class="uk-container-expand">
+        <div class="uk-card uk-card-body uk-card-default uk-margin-left uk-margin-right">
             <h1 class="uk-card-title">Add Patient</h1>
             <form class="uk-form-horizontal" method="POST" action="{{ route('patient.store') }}">
                 {{ csrf_field() }}
@@ -22,12 +22,13 @@
                 </div>
 
                 <div class="uk-margin">
-                    <label class="uk-form-label">Gender</label>
-                    <div class="uk-form-controls">
+                    <span class="uk-form-label">Gender</span>
+                    <div class="uk-form-controls uk-form-controls-text">
                         <label>
-                            <input class="uk-radio" type="radio" name="gender" value="1" checked> Male</label>
+                            <input class="uk-radio" type="radio" name="radio1"> Male</label>
+                        <br>
                         <label>
-                            <input class="uk-radio" type="radio" name="gender" value="2"> Female</label>
+                            <input class="uk-radio" type="radio" name="radio1"> Female</label>
                     </div>
                 </div>
 
