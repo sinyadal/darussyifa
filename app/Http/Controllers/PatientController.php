@@ -7,6 +7,10 @@ use App\Patients;
 
 class PatientController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -98,22 +102,9 @@ class PatientController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,Patients $patients, $id)
+    public function update(Request $request, $id)
     {
         //
-        $patients = Patients::find($id);
-        $patients->name = $request->name;
-        $patients->ic_number = $request->ic_number;
-        $patients->gender = $request->gender;
-        $patients->phone_number = $request->phone_number;
-        $patients->email = $request->email;
-        $patients->address = $request->address;
-        $patients->postcode = $request->postcode;
-        $patients->state = $request->state;
-
-        $patients->save();
-        $patients = Patients::all();
-        return view('patients.index', compact('patients'));
     }
 
     /**
@@ -128,7 +119,7 @@ class PatientController extends Controller
 
         $patients->delete();
         
-        return redirect()->route('patient.index');
+        return redirect()->route('patientgi.index');
     }
 
     public function search(Request $request) {
