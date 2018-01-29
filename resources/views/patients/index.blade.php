@@ -46,9 +46,11 @@
                             <form method="POST" action="{{ route('patient.destroy', $patient->id) }}">
                                 {{ method_field('DELETE') }} {{ csrf_field() }}
 
-                                <a href="{{ route('patient.edit', $patient->id) }}" class="uk-icon-link uk-margin-small-right" uk-icon="icon: pencil"></a>
+                                <a href="" class="uk-icon-link uk-margin-small-right" title="Patient History" uk-tooltip uk-icon="icon: comment"></a>
 
-                                <button type="submit" class="uk-icon-link uk-margin-small-right" uk-icon="icon: trash"></button>
+                                <a href="{{ route('patient.edit', $patient->id) }}" title="Edit" uk-tooltip class="uk-icon-link uk-margin-small-right" uk-icon="icon: pencil"></a>
+
+                                <button type="submit" class="uk-icon-link uk-margin-small-right" title="Remove" uk-tooltip uk-icon="icon: trash"></button>
 
                             </form>
 
