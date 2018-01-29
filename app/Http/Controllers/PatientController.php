@@ -37,7 +37,7 @@ class PatientController extends Controller
      */
     public function store(Request $request)
     {
-        Validation
+        // Validation
         $this->validate($request, [
             'name' => 'required|max:50',
             'ic_number' => 'required|max:20',

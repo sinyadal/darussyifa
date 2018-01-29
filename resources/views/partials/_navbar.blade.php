@@ -1,5 +1,5 @@
 <nav class="uk-navbar-container">
-    <div class="uk-container uk-container">
+    <div class="uk-container-expand">
         <div uk-navbar>
             <div class="uk-navbar-left">
                 <a class="uk-navbar-item uk-logo" href="/">Darussyifa</a>
