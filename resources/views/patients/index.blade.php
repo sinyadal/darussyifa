@@ -3,7 +3,15 @@
 <div class="uk-section uk-section-default">
     <div class="uk-container-expand">
         <div class="uk-card uk-card-body uk-card-default uk-margin-left uk-margin-right">
-            <a href="{{ route('patient.create') }}" class="uk-button uk-button-primary">Add Patient</a>
+            
+
+            <form class="uk-search uk-search-default uk-form-width-large">
+                <span uk-search-icon></span>
+                <input class="uk-search-input uk-form-width-large" type="search" placeholder="Search...">
+            </form>
+
+            <a href="{{ route('patient.create') }}" class="uk-align-right uk-button uk-button-primary">Add Patient</a>
+
             <h1 class="uk-card-title">Patient</h1>
             <table class="uk-table uk-table-divider uk-table-small">
                 <thead>
