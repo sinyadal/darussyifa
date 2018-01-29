@@ -4,20 +4,20 @@
     <div class="uk-container-expand">
         <div class="uk-card uk-card-body uk-card-default uk-margin-left uk-margin-right">
             <h1 class="uk-card-title">Add Patient</h1>
-            <form class="uk-form-horizontal" method="POST" action="{{ route('patient.store') }}">
-                {{ csrf_field() }}
-                @foreach($patients as $patient)
+            <form class="uk-form-horizontal" method="POST" action="{{ route('patient.update', $patients->id) }}">
+                {{ method_field('PATCH')}} {{ csrf_field() }}
+                
                 <div class="uk-margin">
                     <label class="uk-form-label">Name</label>
                     <div class="uk-form-controls">
-                        <input class="uk-input" type="text" name="name" value="{{ $patient->name }}" placeholder="" autofocus>
+                        <input class="uk-input" type="text" name="name" value="{{ $patients->name }}" placeholder="" autofocus>
                     </div>
                 </div>
 
                 <div class="uk-margin">
                     <label class="uk-form-label">IC Number</label>
                     <div class="uk-form-controls">
-                        <input class="uk-input" type="text" name="ic_number" value="{{ $patient->ic_number }}">
+                        <input class="uk-input" type="text" name="ic_number" value="{{ $patients->ic_number }}">
                     </div>
                 </div>
 
@@ -25,48 +25,45 @@
                     <span class="uk-form-label">Gender</span>
                     <div class="uk-form-controls uk-form-controls-text">
                         <label>
-                            @if ($patient->gender == 1)
-                                <input class="uk-radio" type="radio" name="gender" value="1"> Male</label>
-                                <br>
-                            @else ($patient->gender == 2)
-                            <label>
-                                <input class="uk-radio" type="radio" name="gender" value="2"> Female</label>
-                            @endif
+                            <input class="uk-radio" type="radio" name="gender" value="1"> Male</label>
+                        <br>
+                        <label>
+                            <input class="uk-radio" type="radio" name="gender" value="2"> Female</label>
                             </div>
                         </div>
 
                         <div class="uk-margin">
                             <label class="uk-form-label">Phone Number</label>
                             <div class="uk-form-controls">
-                                <input class="uk-input" type="text" name="phone_number" value="{{ $patient->phone_number }}">
+                                <input class="uk-input" type="text" name="phone_number" value="{{ $patients->phone_number }}">
                             </div>
                         </div>
 
                         <div class="uk-margin">
                             <label class="uk-form-label">Email Address</label>
                             <div class="uk-form-controls">
-                                <input class="uk-input" type="email" name="email" value="{{ $patient->email }}">
+                                <input class="uk-input" type="email" name="email" value="{{ $patients->email }}">
                             </div>
                         </div>
 
                         <div class="uk-margin">
                             <label class="uk-form-label">Address</label>
                             <div class="uk-form-controls">
-                                <input class="uk-input" type="text" name="address" value="{{ $patient->address }}">
+                                <input class="uk-input" type="text" name="address" value="{{ $patients->address }}">
                             </div>
                         </div>
 
                         <div class="uk-margin">
                             <label class="uk-form-label">Postcode</label>
                             <div class="uk-form-controls">
-                                <input class="uk-input" type="text" name="postcode" value="{{ $patient->postcode }}">
+                                <input class="uk-input" type="text" name="postcode" value="{{ $patients->postcode }}">
                             </div>
                         </div>
 
                         <div class="uk-margin">
                             <label class="uk-form-label">State</label>
                             <div class="uk-form-controls">
-                                <input class="uk-input" type="text" name="state" value="{{ $patient->state }}">
+                                <input class="uk-input" type="text" name="state" value="{{ $patients->state }}">
                             </div>
                         </div>
 
@@ -77,6 +74,6 @@
                 </div>
             </div>
         </div>
-        @endforeach
+        
 
         @endsection

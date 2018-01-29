@@ -98,9 +98,22 @@ class PatientController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,Patients $patients, $id)
     {
         //
+        $patients = Patients::find($id);
+        $patients->name = $request->name;
+        $patients->ic_number = $request->ic_number;
+        $patients->gender = $request->gender;
+        $patients->phone_number = $request->phone_number;
+        $patients->email = $request->email;
+        $patients->address = $request->address;
+        $patients->postcode = $request->postcode;
+        $patients->state = $request->state;
+
+        $patients->save();
+        $patients = Patients::all();
+        return view('patients.index', compact('patients'));
     }
 
     /**
