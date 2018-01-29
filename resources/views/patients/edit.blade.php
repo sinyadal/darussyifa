@@ -3,7 +3,7 @@
 <div class="uk-section uk-section-default">
     <div class="uk-container-expand">
         <div class="uk-card uk-card-body uk-card-default uk-margin-left uk-margin-right">
-            <h1 class="uk-card-title">Add Patient</h1>
+            <h1 class="uk-card-title">Update Patient</h1>
             <form class="uk-form-horizontal" method="POST" action="{{ route('patient.update', $patients->id) }}">
                 {{ method_field('PATCH')}} {{ csrf_field() }}
                 
