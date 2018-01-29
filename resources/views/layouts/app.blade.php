@@ -1,17 +1,20 @@
 <!DOCTYPE html>
-  <html lang="en">
+<html lang="en">
 
-  <head>
-    @include('partials._head')
-  </head>
-    
-  <body>
+<head>
+  @include('partials._head')
+</head>
 
-    @include('partials._navbar')
-    
-    @yield('content') <!-- about, contact, home -->
+<body>
 
-    @include('partials._footer')
-    
-  </body>
+  @include('partials._navbar')
+
+  <div uk-height-viewport="expand: true">
+    @yield('content') 
+  </div>
+
+  @include('partials._footer')
+
+</body>
+
 </html>

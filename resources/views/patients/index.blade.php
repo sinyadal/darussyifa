@@ -1,6 +1,6 @@
 @extends('layouts.app') @section('content')
 
-<div class="uk-section uk-section-default" uk-height-viewport="expand: true">
+<div class="uk-section uk-section-default">
     <div class="uk-container-expand">
         <div class="uk-card uk-card-body uk-card-default uk-margin-left uk-margin-right">
             <a href="{{ route('patient.create') }}" class="uk-button uk-button-primary">Add Patient</a>

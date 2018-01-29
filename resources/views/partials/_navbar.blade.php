@@ -12,6 +12,9 @@
                 @else
                 <ul class="uk-navbar-nav">
                     <li>
+                        <a href="#">Item</a>
+                    </li>
+                    <li>
                         <a href="#">{{ Auth::user()->name }}</a>
                         <div class="uk-navbar-dropdown">
                             <ul class="uk-nav uk-navbar-dropdown-nav">

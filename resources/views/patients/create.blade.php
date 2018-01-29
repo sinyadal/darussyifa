@@ -25,10 +25,10 @@
                     <span class="uk-form-label">Gender</span>
                     <div class="uk-form-controls uk-form-controls-text">
                         <label>
-                            <input class="uk-radio" type="radio" name="radio1"> Male</label>
+                            <input class="uk-radio" type="radio" name="gender" value="1"> Male</label>
                         <br>
                         <label>
-                            <input class="uk-radio" type="radio" name="radio1"> Female</label>
+                            <input class="uk-radio" type="radio" name="gender" value="2"> Female</label>
                     </div>
                 </div>
 
