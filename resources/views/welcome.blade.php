@@ -13,14 +13,6 @@
 
         <div class="uk-card uk-card-body uk-card-primary">
             <h1 class="uk-card-title">Selamat Datang ke Sistem Pendaftaran Darussyifa'</h1>
-            <p>uk-section-variant
-            </p>
-            <p>Footer
-                </p>
-        </div>
-
-        <div class="uk-card uk-card-body uk-card-primary">
-            <h1 class="uk-card-title">Selamat Datang ke Sistem Pendaftaran Darussyifa'</h1>
             <p>Darussyifa’ merupakan sebuah tempat rawatan yang terkenal di kalangan penduduk Bangi dan masyarakat luar terutamanya
                 orang Islam. Ia menjadi satu altematif kepada orang ramai dalam usaha mencari kesembuhan penyakit selepas
                 mendapatkan rawatan dari klinik dan hospital. Kebanyakan pesakit yang datang bukan hanya mengalami penyakit

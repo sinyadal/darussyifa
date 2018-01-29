@@ -4,7 +4,6 @@
     <div class="uk-container-expand">
         <div class="uk-card uk-card-body uk-card-default uk-margin-left uk-margin-right">
 
-
             <form action="search" method="POST" class="uk-search uk-search-default uk-form-width-large">
                 {{ csrf_field() }}
                 <span uk-search-icon></span>
@@ -25,8 +24,7 @@
                         <th>Address</th>
                         <th>Postcode</th>
                         <th>State</th>
-                        <th>Update</th>
-                        <th>Delete</th>
+                        <th>Option</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -44,14 +42,19 @@
                         <td>{{ $patient->address }}</td>
                         <td>{{ $patient->postcode }}</td>
                         <td>{{ $patient->state }}</td>
-                        <td><a href="{{ route('patient.edit', $patient->id) }}" class="uk-button uk-button-primary">Edit</a>
-                        </td>
                         <td>
-                             <a href="{{ route('patient.destroy', $patient->id) }}" class="uk-button uk-button-danger">Delete</a>
+                            <form method="POST" action="{{ route('patient.destroy', $patient->id) }}">
+                                {{ method_field('DELETE') }} {{ csrf_field() }}
+
+                                <a href="{{ route('patient.edit', $patient->id) }}" class="uk-icon-link uk-margin-small-right" uk-icon="icon: pencil"></a>
+
+                                <button type="submit" class="uk-icon-link uk-margin-small-right" uk-icon="icon: trash"></button>
+
+                            </form>
+
                         </td>
                     </tr>
                     @endforeach
-
                 </tbody>
             </table>
         </div>

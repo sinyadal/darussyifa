@@ -124,7 +124,11 @@ class PatientController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $patients = Patients::find($id);
+
+        $patients->delete();
+        
+        return redirect()->route('patient.index');
     }
 
     public function search(Request $request) {
