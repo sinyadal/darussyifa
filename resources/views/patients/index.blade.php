@@ -52,8 +52,8 @@
 
                                 <button type="submit" class="uk-icon-link uk-margin-small-right" title="Remove" uk-tooltip uk-icon="icon: trash"></button>
 
+                                <a href="" title="Print" uk-tooltip class="uk-icon-link uk-margin-small-right" uk-icon="icon: download"></a>
                             </form>
-
                         </td>
                     </tr>
                     @endforeach
