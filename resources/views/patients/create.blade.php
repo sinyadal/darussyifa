@@ -10,7 +10,7 @@
                 <div class="uk-margin">
                     <label class="uk-form-label">Name</label>
                     <div class="uk-form-controls">
-                        <input class="uk-input" type="text" name="name" value="{{ old('name') }}" placeholder="Error aku buat kat satu input ni je, yang lain buat sendiri.. Try tekan add tanpa masuk apa apa info" autofocus>
+                        <input class="uk-input" type="text" name="name">
                         @if ($errors->has('name'))
                         <div class="uk-margin uk-text-danger">
                             <p>{{ $errors->first('name') }}</p>
@@ -23,6 +23,11 @@
                     <label class="uk-form-label">IC Number</label>
                     <div class="uk-form-controls">
                         <input class="uk-input" type="text" name="ic_number">
+                        @if ($errors->has('name'))
+                        <div class="uk-margin uk-text-danger">
+                            <p>{{ $errors->first('ic_number') }}</p>
+                        </div>
+                        @endif
                     </div>
                 </div>
 
@@ -34,6 +39,11 @@
                         <br>
                         <label>
                             <input class="uk-radio" type="radio" name="gender" value="2"> Female</label>
+                            @if ($errors->has('name'))
+                        <div class="uk-margin uk-text-danger">
+                            <p>{{ $errors->first('gender') }}</p>
+                        </div>
+                        @endif
                     </div>
                 </div>
 
@@ -41,6 +51,11 @@
                     <label class="uk-form-label">Phone Number</label>
                     <div class="uk-form-controls">
                         <input class="uk-input" type="text" name="phone_number">
+                        @if ($errors->has('name'))
+                        <div class="uk-margin uk-text-danger">
+                            <p>{{ $errors->first('phone_number') }}</p>
+                        </div>
+                        @endif
                     </div>
                 </div>
 
@@ -48,6 +63,11 @@
                     <label class="uk-form-label">Email Address</label>
                     <div class="uk-form-controls">
                         <input class="uk-input" type="email" name="email">
+                        @if ($errors->has('name'))
+                        <div class="uk-margin uk-text-danger">
+                            <p>{{ $errors->first('email') }}</p>
+                        </div>
+                        @endif
                     </div>
                 </div>
 
@@ -55,6 +75,11 @@
                     <label class="uk-form-label">Address</label>
                     <div class="uk-form-controls">
                         <input class="uk-input" type="text" name="address">
+                        @if ($errors->has('name'))
+                        <div class="uk-margin uk-text-danger">
+                            <p>{{ $errors->first('address') }}</p>
+                        </div>
+                        @endif
                     </div>
                 </div>
 
@@ -62,6 +87,11 @@
                     <label class="uk-form-label">Postcode</label>
                     <div class="uk-form-controls">
                         <input class="uk-input" type="text" name="postcode">
+                        @if ($errors->has('name'))
+                        <div class="uk-margin uk-text-danger">
+                            <p>{{ $errors->first('postcode') }}</p>
+                        </div>
+                        @endif
                     </div>
                 </div>
 
@@ -69,6 +99,11 @@
                     <label class="uk-form-label">State</label>
                     <div class="uk-form-controls">
                         <input class="uk-input" type="text" name="state">
+                        @if ($errors->has('name'))
+                        <div class="uk-margin uk-text-danger">
+                            <p>{{ $errors->first('state') }}</p>
+                        </div>
+                        @endif
                     </div>
                 </div>
 
