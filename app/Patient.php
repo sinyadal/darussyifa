@@ -16,7 +16,7 @@ class Patient extends Model
     ];
 
     /* Database Relationship */
-	public function post(){
+	public function Patient(){
 		return $this->belongsToMany('TreatmentDetail');
 	}
 }
