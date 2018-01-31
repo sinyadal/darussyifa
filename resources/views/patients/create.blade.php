@@ -23,7 +23,7 @@
                     <label class="uk-form-label">IC Number</label>
                     <div class="uk-form-controls">
                         <input class="uk-input" type="text" name="ic_number">
-                        @if ($errors->has('name'))
+                        @if ($errors->has('ic_number'))
                         <div class="uk-margin uk-text-danger">
                             <p>{{ $errors->first('ic_number') }}</p>
                         </div>
@@ -39,7 +39,7 @@
                         <br>
                         <label>
                             <input class="uk-radio" type="radio" name="gender" value="2"> Female</label>
-                            @if ($errors->has('name'))
+                            @if ($errors->has('gender'))
                         <div class="uk-margin uk-text-danger">
                             <p>{{ $errors->first('gender') }}</p>
                         </div>
@@ -51,7 +51,7 @@
                     <label class="uk-form-label">Phone Number</label>
                     <div class="uk-form-controls">
                         <input class="uk-input" type="text" name="phone_number">
-                        @if ($errors->has('name'))
+                        @if ($errors->has('phone_number'))
                         <div class="uk-margin uk-text-danger">
                             <p>{{ $errors->first('phone_number') }}</p>
                         </div>
@@ -63,7 +63,7 @@
                     <label class="uk-form-label">Email Address</label>
                     <div class="uk-form-controls">
                         <input class="uk-input" type="email" name="email">
-                        @if ($errors->has('name'))
+                        @if ($errors->has('email'))
                         <div class="uk-margin uk-text-danger">
                             <p>{{ $errors->first('email') }}</p>
                         </div>
@@ -75,7 +75,7 @@
                     <label class="uk-form-label">Address</label>
                     <div class="uk-form-controls">
                         <input class="uk-input" type="text" name="address">
-                        @if ($errors->has('name'))
+                        @if ($errors->has('address'))
                         <div class="uk-margin uk-text-danger">
                             <p>{{ $errors->first('address') }}</p>
                         </div>
@@ -87,7 +87,7 @@
                     <label class="uk-form-label">Postcode</label>
                     <div class="uk-form-controls">
                         <input class="uk-input" type="text" name="postcode">
-                        @if ($errors->has('name'))
+                        @if ($errors->has('postcode'))
                         <div class="uk-margin uk-text-danger">
                             <p>{{ $errors->first('postcode') }}</p>
                         </div>
@@ -99,7 +99,7 @@
                     <label class="uk-form-label">State</label>
                     <div class="uk-form-controls">
                         <input class="uk-input" type="text" name="state">
-                        @if ($errors->has('name'))
+                        @if ($errors->has('state'))
                         <div class="uk-margin uk-text-danger">
                             <p>{{ $errors->first('state') }}</p>
                         </div>
