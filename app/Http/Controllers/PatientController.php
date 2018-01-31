@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Patients;
+use App\Patient;
 
 class PatientController extends Controller
 {
@@ -18,7 +18,7 @@ class PatientController extends Controller
      */
     public function index()
     {
-        $patients = Patients::all();
+        $patients = Patient::all();
         return view('patients.index', compact('patients'));
     }
 
@@ -29,7 +29,7 @@ class PatientController extends Controller
      */
     public function create()
     {
-        $patients = Patients::all();
+        $patients = Patient::all();
         return view('patients.create', compact('patients'));
     }
 
@@ -54,7 +54,7 @@ class PatientController extends Controller
         ]);
 
         // Save to database
-        $patient = new Patients;
+        $patient = new Patient;
 
         $patient->name = $request->name;
         $patient->ic_number = $request->ic_number;
@@ -91,7 +91,7 @@ class PatientController extends Controller
     public function edit($id)
     {
         //
-        $patients = Patients::find($id);
+        $patients = Patient::find($id);
         return view('patients.edit', compact('patients'));
     }
 
@@ -105,7 +105,7 @@ class PatientController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $patient = Patients::find($id);
+        $patient = Patient::find($id);
 
         $this->validate($request, [
             'name' => 'required|max:50',
@@ -118,7 +118,8 @@ class PatientController extends Controller
             'state' => 'required|max:20',
         ]);
 
-        $patient = Patients::find($id);
+        $patient = Patient::find($id);
+
         $patient->name = $request->name;
         $patient->ic_number = $request->ic_number;
         $patient->gender = $request->gender;
@@ -130,11 +131,8 @@ class PatientController extends Controller
 
         $patient->save();
 
-        $patients = Patients::all();
+        $patients = Patient::all();
         return view('patients.index', compact('patients'));
-
-
-
     }
 
     /**
@@ -145,7 +143,7 @@ class PatientController extends Controller
      */
     public function destroy($id)
     {
-        $patients = Patients::find($id);
+        $patients = Patient::find($id);
 
         $patients->delete();
         
@@ -156,8 +154,8 @@ class PatientController extends Controller
 
         $input = $request->search;
 
-        $patients = Patients::where('name', 'LIKE', '%'.$input.'%')->orWhere('ic_number', 'LIKE', '%'.$input.'%')->get();
+        $patients = Patient::where('name', 'LIKE', '%'.$input.'%')->orWhere('ic_number', 'LIKE', '%'.$input.'%')->get();
 
         return view('patients.index', compact('patients'));
-	}
+    }
 }
