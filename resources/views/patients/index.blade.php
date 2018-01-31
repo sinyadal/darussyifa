@@ -13,6 +13,9 @@
             <a href="{{ route('patient.create') }}" class="uk-align-right uk-button uk-button-primary">Add Patient</a>
 
             <h1 class="uk-card-title">Patient</h1>
+            @if( $count == 0)
+            <p class="uk-text-center">Sorry, not found</p>
+            @else
             <table class="uk-table uk-table-divider uk-table-small">
                 <thead>
                     <tr>
@@ -52,13 +55,15 @@
 
                                 <button type="submit" class="uk-icon-link uk-margin-small-right" title="Remove" uk-tooltip uk-icon="icon: trash"></button>
 
-                                <a href="" title="Print" uk-tooltip class="uk-icon-link uk-margin-small-right" uk-icon="icon: download"></a>
+                                <a href="{{ action('PatientController@pdf', $patient->id) }}" title="Print" uk-tooltip class="uk-icon-link uk-margin-small-right"
+                                    uk-icon="icon: download"></a>
                             </form>
                         </td>
                     </tr>
                     @endforeach
                 </tbody>
             </table>
+            @endif
         </div>
     </div>
 </div>

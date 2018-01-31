@@ -25,8 +25,7 @@ class TreatmentDetailController extends Controller
      */
     public function create()
     {
-        $patient = Patient::find($id);
-        return view('patients.Treatment-create', compact('patient'));
+        
     }
 
     /**
