@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Patient;
+use PDF;
 
 class PatientController extends Controller
 {
@@ -158,4 +159,13 @@ class PatientController extends Controller
 
         return view('patients.index', compact('patients'));
     }
+
+    public function downloadPDF($id){
+
+        $patients = Patient::find($id);
+
+        $pdf = PDF::loadView('pdf', compact('patients'));
+
+        return $pdf->stream('invoice.pdf');
+      }
 }

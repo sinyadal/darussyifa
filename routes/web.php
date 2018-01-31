@@ -20,3 +20,5 @@ Auth::routes();
 Route::resource('/patient', 'PatientController');
 Route::resource('/treatment', 'TreatmentDetailController');
 Route::post('/search', 'PatientController@search');
+
+Route::get('/downloadPDF/{id}','PatientController@downloadPDF');
