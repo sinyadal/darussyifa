@@ -15,6 +15,9 @@ class CreateTreatmentDetailsTable extends Migration
     {
         Schema::create('treatment_details', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('user_id');
+            $table->string('illness');
+            $table->string('doctor');
             $table->timestamps();
         });
     }

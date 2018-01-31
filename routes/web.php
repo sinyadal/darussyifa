@@ -18,4 +18,5 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::resource('/patient', 'PatientController');
+Route::resource('/treatment', 'TreatmentDetailController');
 Route::post('/search', 'PatientController@search');
