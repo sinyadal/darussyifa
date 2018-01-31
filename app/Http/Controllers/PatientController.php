@@ -20,7 +20,9 @@ class PatientController extends Controller
     public function index()
     {
         $patients = Patient::all();
-        return view('patients.index', compact('patients'));
+        $count = Patient::all()->count();
+
+        return view('patients.index', compact('patients', 'count'));
     }
 
     /**
@@ -31,6 +33,7 @@ class PatientController extends Controller
     public function create()
     {
         $patients = Patient::all();
+
         return view('patients.create', compact('patients'));
     }
 
@@ -93,6 +96,7 @@ class PatientController extends Controller
     {
         //
         $patients = Patient::find($id);
+
         return view('patients.edit', compact('patients'));
     }
 
@@ -157,7 +161,9 @@ class PatientController extends Controller
 
         $patients = Patient::where('name', 'LIKE', '%'.$input.'%')->orWhere('ic_number', 'LIKE', '%'.$input.'%')->get();
 
-        return view('patients.index', compact('patients'));
+        $count = Patient::where('name', 'LIKE', '%'.$input.'%')->orWhere('ic_number', 'LIKE', '%'.$input.'%')->count();
+
+        return view('patients.index', compact('patients', 'count'));
     }
 
     public function pdf($id){
