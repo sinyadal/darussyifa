@@ -14,4 +14,9 @@ class Patient extends Model
     protected $fillable = [
         'name', 'ic_number', 'gender', 'phone_number', 'email', 'address', 'postcode', 'state',
     ];
+
+    /* Database Relationship */
+	public function post(){
+		return $this->belongsToMany('TreatmentDetail');
+	}
 }

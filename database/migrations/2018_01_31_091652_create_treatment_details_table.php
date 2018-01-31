@@ -18,6 +18,7 @@ class CreateTreatmentDetailsTable extends Migration
             $table->integer('user_id');
             $table->string('illness');
             $table->string('doctor');
+            $table->string('comment');
             $table->timestamps();
         });
     }
