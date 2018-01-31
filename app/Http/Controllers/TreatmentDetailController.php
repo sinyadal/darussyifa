@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\TreatmentDetail;
+use App\Patient;
 
 class TreatmentDetailController extends Controller
 {
@@ -23,7 +25,8 @@ class TreatmentDetailController extends Controller
      */
     public function create()
     {
-        //
+        $patient = Patient::find($id);
+        return view('patients.Treatment-create', compact('patient'));
     }
 
     /**
@@ -34,7 +37,25 @@ class TreatmentDetailController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Validation
+        $this->validate($request, [
+            'illness' => 'required',
+            'doctor' => 'required',
+            'comment' => 'required',
+        ]);
+
+        // Save to database
+        $treatment = new TreatmentDetail;
+
+        $treatment->illness = $request->illness;
+        $treatment->doctor = $request->doctor;
+        $treatment->comment = $request->comment;
+        $treatment->user_id = $request->user_id;
+
+        $treatment->save();
+
+        // Return view
+        return redirect()->route('patient.index');
     }
 
     /**
@@ -45,7 +66,10 @@ class TreatmentDetailController extends Controller
      */
     public function show($id)
     {
-        //
+        $treatments = TreatmentDetail::where('user_id', '=', $id)->get();
+        $patients = TreatmentDetail::where('user_id', '=', $id)->get()->first();
+        $patient = Patient::where('id', '=', $patients->user_id)->get()->first();
+        return view('patients.Treatment-history', compact('treatments', 'patient'));
     }
 
     /**
@@ -80,5 +104,35 @@ class TreatmentDetailController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+
+    public function add($id)
+    {
+        // Validation
+        $this->validate($request, [
+            'illness' => 'required',
+            'doctor' => 'required',
+            'comment' => 'required',
+        ]);
+
+        // Save to database
+        $treatment = new TreatmentDetail;
+
+        $treatment->illness = $request->illness;
+        $treatment->doctor = $request->doctor;
+        $treatment->comment = $request->comment;
+        $treatment->user_id = $request->user_id;
+
+        $treatment->save();
+
+        // Return view
+        return redirect()->route('patient.index');
+    }
+
+    public function search($id)
+    {
+        $patient = Patient::find($id);
+        return view('patients.Treatment-create', compact('patient'));
     }
 }

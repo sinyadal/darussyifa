@@ -3,12 +3,9 @@
 <div class="uk-section uk-section-default">
     <div class="uk-container-expand">
         <div class="uk-card uk-card-body uk-card-default uk-margin-left uk-margin-right">
-            <h1 class="uk-card-title">Add Patient</h1>
-            <form class="uk-form-horizontal" method="POST" action="{{ route('patient.store') }}">
+            <h1 class="uk-card-title">Add Illnesss</h1>
+            <form class="uk-form-horizontal" method="POST" action="{{ route('treatment.store') }}">
                 {{ csrf_field() }}
-
-                <hr class="uk-margin-large-top">
-                <h1 class="uk-card-title">Add Illnesss</h1>
 
                 <div class="uk-margin">
                     <label class="uk-form-label">Illness</label>
@@ -32,7 +29,7 @@
                 </div>
 
                 <div class="form-group">
-                        <input id="cat_id" type="hidden" class="form-control" name="post_section" value="gallery">
+                        <input type="hidden" class="form-control" name="user_id" value="{{ $patient->id }}">
                 </div>
 
                 <div class="uk-margin" uk-margin>

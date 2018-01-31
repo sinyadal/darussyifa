@@ -20,3 +20,4 @@ Auth::routes();
 Route::resource('/patient', 'PatientController');
 Route::resource('/treatment', 'TreatmentDetailController');
 Route::post('/search', 'PatientController@search');
+Route::get('treatment/seacrh/{id}', 'TreatmentDetailController@search')->name('treatment.history-create');

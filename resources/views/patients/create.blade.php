@@ -107,30 +107,6 @@
                     </div>
                 </div>
 
-                <hr class="uk-margin-large-top">
-                <h1 class="uk-card-title">Add Illnesss</h1>
-
-                <div class="uk-margin">
-                    <label class="uk-form-label">Illness</label>
-                    <div class="uk-form-controls">
-                        <input class="uk-input" type="text" name="">
-                    </div>
-                </div>
-
-                <div class="uk-margin">
-                    <label class="uk-form-label">Perawat</label>
-                    <div class="uk-form-controls">
-                        <input class="uk-input" type="text" name="">
-                    </div>
-                </div>
-
-                <div class="uk-margin">
-                    <label class="uk-form-label">Comment</label>
-                    <div class="uk-form-controls">
-                        <textarea class="uk-textarea" rows="4" name=""></textarea>
-                    </div>
-                </div>
-
                 <div class="uk-margin" uk-margin>
                     <button type="submit" class="uk-button uk-button-primary">Add Patient</button>
                 </div>

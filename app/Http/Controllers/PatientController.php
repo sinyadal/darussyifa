@@ -68,7 +68,7 @@ class PatientController extends Controller
         $patient->save();
 
         // Return view
-        return redirect()->route('patient.index');
+        return view('patients.Treatment-create', compact('patient'));
     }
 
     /**
