@@ -12,7 +12,7 @@ class TreatmentDetail extends Model
 
 
     /* Database Relationship */
-	public function postCategories(){
+	public function TreatmentDetail(){
 		return $this->hasOne('App\Patient', 'id', 'user_id');
 	}
 }
