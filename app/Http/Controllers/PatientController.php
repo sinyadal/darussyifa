@@ -160,7 +160,7 @@ class PatientController extends Controller
         return view('patients.index', compact('patients'));
     }
 
-    public function downloadPDF($id){
+    public function pdf($id){
 
         $patients = Patient::find($id);
 
