@@ -27,6 +27,7 @@
                         <th>Address</th>
                         <th>Postcode</th>
                         <th>State</th>
+                        <th>Created at</th>                        
                         <th>Option</th>
                     </tr>
                 </thead>
@@ -45,6 +46,7 @@
                         <td>{{ $patient->address }}</td>
                         <td>{{ $patient->postcode }}</td>
                         <td>{{ $patient->state }}</td>
+                        <td>{{ $patient->created_at }}</td>
                         <td>
                             <form method="POST" action="{{ route('patient.destroy', $patient->id) }}">
                                 {{ method_field('DELETE') }} {{ csrf_field() }}

@@ -8,32 +8,23 @@ use App\Patient;
 
 class TreatmentDetailController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    public function __construct()
     {
-        //
+        $this->middleware('auth');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function index()
     {
         
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    public function create()
+    {
+        $patient = Patient::orderBy('created_at', 'desc')->first(); // Fetch latest data 
+
+        return view('treatment-details.create', compact('patient')); // Pass latest data to views
+    }
+
     public function store(Request $request)
     {
         // Validation
@@ -57,81 +48,28 @@ class TreatmentDetailController extends Controller
         return redirect()->route('patient.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    public function show($id) // Later, switch this to index, update route
     {
-        $treatments = TreatmentDetail::where('user_id', '=', $id)->get();
-        $patients = TreatmentDetail::where('user_id', '=', $id)->get()->first();
-        $patient = Patient::where('id', '=', $patients->user_id)->get()->first();
-        return view('patients.Treatment-history', compact('treatments', 'patient'));
+        $treatments = TreatmentDetail::where('user_id', '=', $id)->orderBy('created_at', 'desc')->get(); // Display bundle
+
+        $patients = TreatmentDetail::where('user_id', '=', $id)->get()->first(); // Display single row
+        $patient = Patient::where('id', '=', $patients->user_id)->get()->first(); 
+        
+        return view('treatment-details.show', compact('treatments', 'patient'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         //
-    }
-
-
-    public function add($id)
-    {
-        // Validation
-        $this->validate($request, [
-            'illness' => 'required',
-            'doctor' => 'required',
-            'comment' => 'required',
-        ]);
-
-        // Save to database
-        $treatment = new TreatmentDetail;
-
-        $treatment->illness = $request->illness;
-        $treatment->doctor = $request->doctor;
-        $treatment->comment = $request->comment;
-        $treatment->user_id = $request->user_id;
-
-        $treatment->save();
-
-        // Return view
-        return redirect()->route('patient.index');
-    }
-
-    public function search($id)
-    {
-        $patient = Patient::find($id);
-        return view('patients.Treatment-create', compact('patient'));
     }
 }

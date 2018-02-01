@@ -10,9 +10,9 @@
                 <input class="uk-search-input uk-form-width-large" type="search" name="search" placeholder="Search by name, or IC number..">
             </form>
 
-            <a href="{{ route('treatment.history-create', $patient->id) }}" class="uk-align-right uk-button uk-button-primary">Add Treatment</a>
+            <a href="{{ route('treatment.create', $patient->id) }}" class="uk-align-right uk-button uk-button-primary">Add Treatment</a>
 
-            <h1 class="uk-card-title">Patient</h1>
+            <h1 class="uk-card-title">Illness</h1>
             <table class="uk-table uk-table-divider uk-table-small">
                 <thead>
                     <tr>

@@ -29,7 +29,7 @@
                 </div>
 
                 <div class="form-group">
-                        <input type="hidden" class="form-control" name="user_id" value="{{ $patient->id }}">
+                    <input type="hidden" class="form-control" name="user_id" value="{{ $patient->id }}">
                 </div>
 
                 <div class="uk-margin" uk-margin>

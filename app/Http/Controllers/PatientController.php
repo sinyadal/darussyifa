@@ -12,24 +12,15 @@ class PatientController extends Controller
     {
         $this->middleware('auth');
     }
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-        $patients = Patient::all();
+        $patients = Patient::orderBy('created_at', 'desc')->get();
         $count = Patient::all()->count();
 
         return view('patients.index', compact('patients', 'count'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         $patients = Patient::all();
@@ -37,15 +28,8 @@ class PatientController extends Controller
         return view('patients.create', compact('patients'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        // Validation
         $this->validate($request, [
             'name' => 'required|max:50',
             'ic_number' => 'required|max:20',
@@ -57,7 +41,6 @@ class PatientController extends Controller
             'state' => 'required|max:20',
         ]);
 
-        // Save to database
         $patient = new Patient;
 
         $patient->name = $request->name;
@@ -72,26 +55,14 @@ class PatientController extends Controller
         $patient->save();
 
         // Return view
-        return view('patients.Treatment-create', compact('patient'));
+        return redirect()->route('treatment.create', compact('patient'));
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         //
@@ -100,13 +71,6 @@ class PatientController extends Controller
         return view('patients.edit', compact('patients'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         //
@@ -137,15 +101,10 @@ class PatientController extends Controller
         $patient->save();
 
         $patients = Patient::all();
+        
         return view('patients.index', compact('patients'));
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         $patients = Patient::find($id);
@@ -155,8 +114,8 @@ class PatientController extends Controller
         return redirect()->route('patient.index');
     }
 
-    public function search(Request $request) {
-
+    public function search(Request $request)
+    {
         $input = $request->search;
 
         $patients = Patient::where('name', 'LIKE', '%'.$input.'%')->orWhere('ic_number', 'LIKE', '%'.$input.'%')->get();
@@ -166,12 +125,12 @@ class PatientController extends Controller
         return view('patients.index', compact('patients', 'count'));
     }
 
-    public function pdf($id){
-
+    public function pdf($id)
+    {
         $patients = Patient::find($id);
 
         $pdf = PDF::loadView('pdf', compact('patients'));
 
         return $pdf->stream('invoice.pdf');
-      }
+    }
 }
