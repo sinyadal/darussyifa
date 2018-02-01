@@ -25,10 +25,10 @@
                     <span class="uk-form-label">Gender</span>
                     <div class="uk-form-controls uk-form-controls-text">
                         <label>
-                            <input class="uk-radio" type="radio" name="gender" value="1"> Male</label>
+                            <input class="uk-radio" type="radio" name="gender" value="1" @if ($patients->gender == 1) checked @else @endif> Male</label>
                         <br>
                         <label>
-                            <input class="uk-radio" type="radio" name="gender" value="2"> Female</label>
+                            <input class="uk-radio" type="radio" name="gender" value="2" @if ($patients->gender == 2) checked @else @endif> Female</label>
                             </div>
                         </div>
 
