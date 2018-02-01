@@ -21,6 +21,4 @@ Route::resource('/patient', 'PatientController');
 Route::resource('/treatment', 'TreatmentDetailController');
 Route::post('/search', 'PatientController@search');
 
-Route::get('treatment/{id}/create', 'TreatmentDetailController@search')->name('treatment.history-create');
-
 Route::get('patient/{id}/pdf','PatientController@pdf');
