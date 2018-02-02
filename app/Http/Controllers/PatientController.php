@@ -101,8 +101,9 @@ class PatientController extends Controller
         $patient->save();
 
         $patients = Patient::all();
+        $count = Patient::all()->count();
         
-        return view('patients.index', compact('patients'));
+        return view('patients.index', compact('patients', 'count'));
     }
 
     public function destroy($id)
