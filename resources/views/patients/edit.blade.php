@@ -68,7 +68,7 @@
                         </div>
 
                         <div class="uk-margin" uk-margin>
-                            <button type="submit" class="uk-button uk-button-primary">Edit</button>
+                            <button type="submit" class="uk-button uk-button-primary">Save</button>
                         </div>
                     </form>
                 </div>
