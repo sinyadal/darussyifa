@@ -33,7 +33,7 @@
                 </div>
 
                 <div class="uk-margin">
-                    <span class="uk-form-label">Checkbox</span>
+                    
                     <div class="uk-form-controls uk-form-controls-text">
                         <label>
                             <input class="uk-checkbox" type="checkbox" name="remember" {{ old( 'remember') ? 'checked' : '' }}> Remember Me</label>
