@@ -46,7 +46,7 @@
                         <td>{{ $patient->address }}</td>
                         <td>{{ $patient->postcode }}</td>
                         <td>{{ $patient->state }}</td>
-                        <td>{{ $patient->created_at }}</td>
+                        <td>{{ date('M j, Y g:i A', strtotime($patient->created_at)) }}</td>
                         <td>
                             <form method="POST" action="{{ route('patient.destroy', $patient->id) }}">
                                 {{ method_field('DELETE') }} {{ csrf_field() }}
