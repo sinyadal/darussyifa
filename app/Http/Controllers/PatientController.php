@@ -15,7 +15,7 @@ class PatientController extends Controller
 
     public function index()
     {
-        $patients = Patient::orderBy('created_at', 'desc')->get();
+        $patients = Patient::orderBy('created_at', 'desc')->paginate(6);
         $count = Patient::all()->count();
 
         return view('patients.index', compact('patients', 'count'));
