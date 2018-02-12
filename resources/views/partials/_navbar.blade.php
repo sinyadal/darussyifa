@@ -2,7 +2,7 @@
     <div class="uk-container-expand">
         <div uk-navbar>
             <div class="uk-navbar-left">
-                <a class="uk-navbar-item uk-logo" href="/">Darussyifa</a>
+                <a class="uk-navbar-item uk-logo" href="/"><img src="image/logo.png" height="65px" width="65px"> Darussyifa</a>
             </div>
 
             <div class="uk-navbar-right">
