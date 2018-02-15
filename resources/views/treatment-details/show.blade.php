@@ -18,7 +18,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($treatments as $treatment)
+                    @foreach($treatments as $treatment) 
                     <tr>
                         <td>{{ $treatment->illness }}</td>
                         <td>{{ $treatment->comment }}</td>
