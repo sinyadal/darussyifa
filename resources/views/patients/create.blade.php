@@ -109,7 +109,12 @@
 
                 <div class="uk-margin" uk-margin>
                     <button type="submit" class="uk-button uk-button-primary">Add Patient</button>
+
                 </div>
+
+                <a class="uk-button uk-button-danger" href="">Reset</a>
+
+
             </form>
         </div>
     </div>
