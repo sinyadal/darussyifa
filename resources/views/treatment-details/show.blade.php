@@ -13,7 +13,7 @@
                         <th>Illness</th>
                         <th>Comment</th>
                         <th>Doctor</th>
-                        <th>Date</th>
+                        <th>Created At</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -22,7 +22,7 @@
                         <td>{{ $treatment->illness }}</td>
                         <td>{{ $treatment->comment }}</td>
                         <td>{{ $treatment->doctor }}</td>
-                        <td>{{ date('M j, Y g:i A', strtotime($patient->date)) }}</td>
+                        <td>{{ date('M j, Y g:i A', strtotime($treatment->created_at)) }}</td>
                     </tr>
                     @endforeach
                 </tbody>
