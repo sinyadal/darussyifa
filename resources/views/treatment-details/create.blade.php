@@ -1,4 +1,4 @@
-@extends('layouts.app') @section('content')
+    @extends('layouts.app') @section('content')
 
 <div class="uk-section uk-section-default">
     <div class="uk-container-expand">
