@@ -119,7 +119,7 @@ class PatientController extends Controller
     {
         $input = $request->search;
 
-        $patients = Patient::where('name', 'LIKE', '%'.$input.'%')->orWhere('ic_number', 'LIKE', '%'.$input.'%')->get();
+        $patients = Patient::where('name', 'LIKE', '%'.$input.'%')->orWhere('ic_number', 'LIKE', '%'.$input.'%')->paginate(6);
 
         $count = Patient::where('name', 'LIKE', '%'.$input.'%')->orWhere('ic_number', 'LIKE', '%'.$input.'%')->count();
 
