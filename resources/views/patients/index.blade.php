@@ -67,7 +67,7 @@
                             
                             <a href="{{ action('PatientController@pdf', $patient->id) }}" title="Print" uk-tooltip class="uk-icon-link uk-margin-small-right"
                                 uk-icon="icon: download"></a>
-                                @else
+                                @else  
                                 @endif
 
                             </form>
@@ -75,9 +75,11 @@
                     </tr>
                     @endforeach
                 </tbody>
+                
             </table>
+            
             @endif
-
+            
         </div>
 
         {{ $patients->links('vendor.pagination.uikit') }}
