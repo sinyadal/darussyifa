@@ -4,8 +4,10 @@
     <div class="uk-container-expand">
         <div class="uk-card uk-card-body uk-card-default uk-margin-left uk-margin-right">
 
+            @if(Auth::user()->level===1)
+            @else
             <a href="{{ route('treatment.create', $patient->id) }}" class="uk-button uk-button-primary">Add Treatment</a>
-            
+            @endif
 
             <h1 class="uk-card-title">Illness</h1>
             <table class="uk-table uk-table-divider uk-table-small">

@@ -10,7 +10,10 @@
                 <input class="uk-search-input uk-form-width-large" type="search" name="search" placeholder="Search by name, or IC number..">
             </form>
 
+            @if(Auth::user()->level===1)
             <a href="{{ route('patient.create') }}" class="uk-align-right uk-button uk-button-primary">Add Patient</a>
+            @else
+            @endif
 
             <h1 class="uk-card-title">Patient
                 <span class="uk-text-primary">{{ $count }}</span>
@@ -54,13 +57,19 @@
 
                             <a href="{{ route('treatment.show', $patient->id) }}" class="uk-icon-link uk-margin-small-right" title="Patient History"
                                 uk-tooltip uk-icon="icon: comment"></a>
-
+                            
+                                @if(Auth::user()->level===1)
                             <a href="{{ route('patient.edit', $patient->id) }}" title="Edit" uk-tooltip class="uk-icon-link uk-margin-small-right" uk-icon="icon: pencil"></a>
+                            
 
                             <a href="#modal-sections-{{ $patient->id }}" class="uk-icon-link uk-margin-small-right" uk-toggle title="Remove" uk-tooltip uk-icon="icon: trash"></a>
-
+                            
+                            
                             <a href="{{ action('PatientController@pdf', $patient->id) }}" title="Print" uk-tooltip class="uk-icon-link uk-margin-small-right"
                                 uk-icon="icon: download"></a>
+                                @else
+                                @endif
+
                             </form>
                         </td>
                     </tr>

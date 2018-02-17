@@ -16,9 +16,13 @@
                     <button class="uk-button uk-button-default" type="button">Hi! {{ Auth::user()->name }} <span uk-icon="icon: chevron-down"></span></button>
                     <div uk-dropdown>
                         <ul class="uk-nav uk-dropdown-nav">
+                            @if(Auth::user()->level===1)
                             <li>
-                                <a href="{{ route('patient.index') }}">Manage Patient</a>
-                            </li>
+                                    <a href="{{ route('patient.index') }}">Manage Patient</a>
+                                </li>
+                            @else
+                            @endif
+                            
                             <li class="uk-nav-divider"></li>
 
 
