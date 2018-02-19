@@ -33,7 +33,7 @@
                 </div>
 
                 <div class="uk-margin" uk-margin>
-                    <button type="submit" class="uk-button uk-button-primary">Add Illness</button>
+                    <button type="submit" class="uk-button uk-button-primary">Add Illness</button>    
                 </div>
             </form>
         </div>
