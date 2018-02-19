@@ -6,7 +6,7 @@
 
             @if(Auth::user()->level===1)
             @else
-            <a href="{{ route('treatment.create', $patient->id) }}" class="uk-button uk-button-primary">Add Treatment</a>
+            <a href="{{ route('treatment.match', $patient->id) }}" class="uk-button uk-button-primary">Add Treatment</a>
             @endif
 
             <h1 class="uk-card-title">Illness</h1>

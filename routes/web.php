@@ -21,4 +21,7 @@ Route::resource('/patient', 'PatientController');
 Route::resource('/treatment', 'TreatmentDetailController');
 Route::post('/search', 'PatientController@search');
 
+
+Route::get('/find/{id}', 'TreatmentDetailController@match')->name('treatment.match');
+
 Route::get('patient/{id}/pdf','PatientController@pdf');
