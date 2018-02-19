@@ -73,7 +73,6 @@ class PatientController extends Controller
 
     public function update(Request $request, $id)
     {
-        //
         $patient = Patient::find($id);
 
         $this->validate($request, [

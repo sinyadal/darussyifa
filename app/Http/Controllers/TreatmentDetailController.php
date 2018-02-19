@@ -20,9 +20,7 @@ class TreatmentDetailController extends Controller
 
     public function create()
     {
-        $patient = Patient::orderBy('created_at', 'desc')->first(); // Fetch latest data 
-
-        return view('treatment-details.create', compact('patient')); // Pass latest data to views
+        
     }
 
     public function store(Request $request)
@@ -53,6 +51,8 @@ class TreatmentDetailController extends Controller
         $treatments = TreatmentDetail::where('user_id', '=', $id)->orderBy('created_at', 'desc')->get(); // Display bundle
 
         $patients = TreatmentDetail::where('user_id', '=', $id)->get()->first(); // Display single row
+
+        
         $patient = Patient::where('id', '=', $patients->user_id)->get()->first(); 
         
         return view('treatment-details.show', compact('treatments', 'patient'));
@@ -71,5 +71,12 @@ class TreatmentDetailController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function match($id)
+    {
+        $patient = Patient::find($id);
+        
+        return view('treatment-details.create', compact('patient')); // Pass latest data to views
     }
 }
