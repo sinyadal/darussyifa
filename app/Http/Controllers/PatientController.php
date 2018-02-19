@@ -99,7 +99,8 @@ class PatientController extends Controller
 
         $patient->save();
 
-        $patients = Patient::all();
+        $patients = Patient::orderBy('created_at', 'desc')->paginate(6);
+
         $count = Patient::all()->count();
         
         return view('patients.index', compact('patients', 'count'));

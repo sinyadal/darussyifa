@@ -23,10 +23,14 @@
                             <li>
                                 <a href="{{ route('patient.index') }}">Manage Patient</a>
                             </li>
-                            @else @endif
+                            @else(Auth::user()->level===)
+                            
                             <li>
                                 <a href="{{ route('patient.index') }}">Manage Patient</a>
                             </li>
+                    
+                            @endif
+                            
                             <li class="uk-nav-divider"></li>
 
 
