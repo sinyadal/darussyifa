@@ -20,7 +20,8 @@ class TreatmentDetailController extends Controller
 
     public function create()
     {
-        
+        $patient = Patient::orderBy('created_at', 'desc')->first(); // Fetch latest data 
+        return view('treatment-details.create', compact('patient')); // Pass latest data to views
     }
 
     public function store(Request $request)
