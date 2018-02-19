@@ -9,7 +9,7 @@
             <a href="{{ route('treatment.match', $patient->id) }}" class="uk-button uk-button-primary">Add Treatment</a>
             @endif
 
-            <h1 class="uk-card-title">Illness</h1>
+            <h1 class="uk-card-title">Illness</h1>{{ $patient->name }}
             <table class="uk-table uk-table-divider uk-table-small">
                 <thead>
                     <tr>
