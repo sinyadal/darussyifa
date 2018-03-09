@@ -31,21 +31,16 @@
                     </div>
                 </div>
 
-                <div class="uk-margin">
-                    <span class="uk-form-label">Gender</span>
-                    <div class="uk-form-controls uk-form-controls-text">
-                        <label>
-                            <input class="uk-radio" type="radio" name="gender" value="1"> Male</label>
-                        <br>
-                        <label>
-                            <input class="uk-radio" type="radio" name="gender" value="2"> Female</label>
-                            @if ($errors->has('gender'))
-                        <div class="uk-margin uk-text-danger">
-                            <p>{{ $errors->first('gender') }}</p>
+                    <div class="uk-margin">
+                        <span class="uk-form-label">Gender</span>
+                        <div class="uk-form-controls uk-form-controls-text">
+                            <label>
+                                <input class="uk-radio" type="radio" name="gender" value="1"> Male</label>
+                            <br>
+                            <label>
+                                <input class="uk-radio" type="radio" name="gender" value="2"> Female</label>
                         </div>
-                        @endif
                     </div>
-                </div>
 
                 <div class="uk-margin">
                     <label class="uk-form-label">Phone Number</label>
